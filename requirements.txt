@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 padelpy
 streamlit
 scikit-learn
 numpy
+=======
+padelpy
+streamlit
+scikit-learn
+numpy
+>>>>>>> 7a863987e37569cbe5bf82b7a883566ec692b3e4
 pandas

@@ -1,0 +1,5 @@
+canonical_smiles
+Cc1noc(C)c1CN1C(=O)C(=O)c2cc(C#N)ccc21
+O=C1C(=O)N(Cc2ccc(F)cc2Cl)c2ccc(I)cc21
+O=C1C(=O)N(CC2COc3ccccc3O2)c2ccc(I)cc21
+O=C1C(=O)N(Cc2cc3ccccc3s2)c2ccccc21
