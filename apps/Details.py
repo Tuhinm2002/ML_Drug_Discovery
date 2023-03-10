@@ -1,40 +1,40 @@
 import streamlit as st
 
 def app():
-<<<<<<< HEAD
     result = st.session_state["value"]
     if result == "Leukemia":
-        st.write("### ")
+        st.write("### https://github.com/Tuhinm2002/ML_Drug_Discovery/blob/main/Notebooks/LEUKEMIA_DRUG_DISCOVERY.ipynb")
 
     elif result == "Influenza B":
-        st.write("### ")
+        st.write("### https://github.com/Tuhinm2002/ML_Drug_Discovery/blob/main/Notebooks/INFLUENZA_B_DRUG_DISCOVERY.ipynb")
 
     elif result == "Influenza A":
-        st.write("### ")
+        st.write("### https://github.com/Tuhinm2002/ML_Drug_Discovery/blob/main/Notebooks/INFLUENZA_A_DRUG_DISCOVERY.ipynb")
 
     elif result == "Alzheimer":
-        st.write("### ")
+        st.write("### https://github.com/Tuhinm2002/ML_Drug_Discovery/blob/main/Notebooks/ALZHEIMER_DRUG_DISCOVERY.ipynb")
 
     elif result == "Dengue":
-        st.write("### ")
+        st.write("### https://github.com/Tuhinm2002/ML_Drug_Discovery/blob/main/Notebooks/DENGUE_DRUG_DISCOVERY.ipynb")
 
     elif result == "Lungs Cancer":
-        st.write("### ")
+        st.write("### https://github.com/Tuhinm2002/ML_Drug_Discovery/blob/main/Notebooks/LUNGS_CANCER_DRUG_DISCOVERY.ipynb")
 
     elif result == "Aromatase":
-        st.write("### ")
+        st.write("### https://github.com/Tuhinm2002/ML_Drug_Discovery/blob/main/Notebooks/AROMATASE_DRUG_DISCOVERY.ipynb")
 
     elif result == "Hepatitis B":
-        st.write("### ")
+        st.write("### https://github.com/Tuhinm2002/ML_Drug_Discovery/blob/main/Notebooks/HEPATITIS_B_DRUG_DISCOVERY.ipynb")
 
     elif result == "Hepatitis C":
-        st.write("### ")
+        st.write("### https://github.com/Tuhinm2002/ML_Drug_Discovery/blob/main/Notebooks/HEPATITIS_C_DRUG_DISCOVERY.ipynb")
 
     elif result == "CoronaVirus":
-        st.write("### ")
-=======
-    st.write("Tuhin Mondal (CSE AIML 2C, UEMK) -> MACHINE LEARNING and backend")
-    st.write("Samya Goswami (CSE AIML 2B, UEMK) -> MACHINE LEARNING")
-    st.write("Ankan Hazra (CSE 2A, UEMK) -> FRONTEND")
-    st.write("Rounak Dey (CSE IOT, UEMK) -> UI/UX")
->>>>>>> 7a863987e37569cbe5bf82b7a883566ec692b3e4
+        st.write("### https://github.com/Tuhinm2002/ML_Drug_Discovery/blob/main/Notebooks/CORONAVIRUS_DRUG_DISCOVERY.ipynb")
+
+    elif result == "Chronic Kidney Disease":
+        st.write("### https://github.com/Tuhinm2002/ML_Drug_Discovery/blob/main/Notebooks/CHRONIC_KIDNEY_DISEASE_DRUG_DISCOVERY.ipynb")
+
+    elif result == "Hiv":
+        st.write("### https://github.com/Tuhinm2002/ML_Drug_Discovery/blob/main/Notebooks/HIV_DRUG_DISCOVERY.ipynb")
+
