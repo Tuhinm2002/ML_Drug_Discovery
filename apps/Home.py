@@ -37,7 +37,7 @@ def app():
 					st.write(df)
 					os.remove('descripter.csv')
 					st.session_state["value"] = "CoronaVirus"
-					st.download_button(label="Download data as CSV",data=res,file_name='predictions.csv',mime='text/csv')
+					st.download_button(label="Download data as CSV",data=df.to_csv(),file_name='predictions.csv',mime='text/csv')
 
 			elif choose == "Hepatitis C":
 				if btn1:
@@ -52,7 +52,7 @@ def app():
 					st.write(df)
 					os.remove('descripter.csv')
 					st.session_state["value"] = "Hepatitis C"
-					st.download_button(label="Download data as CSV",data=res,file_name='predictions.csv',mime='text/csv')
+					st.download_button(label="Download data as CSV",data=df.to_csv(),file_name='predictions.csv',mime='text/csv')
 
 			elif choose == "Hepatitis B":
 					if btn1:
@@ -67,7 +67,7 @@ def app():
 						st.write(df)
 						os.remove('descripter.csv')
 						st.session_state["value"] = "Hepatitis B"
-						st.download_button(label="Download data as CSV",data=res,file_name='predictions.csv',mime='text/csv')
+						st.download_button(label="Download data as CSV",data=df.to_csv(),file_name='predictions.csv',mime='text/csv')
 
 			elif choose == "Aromatase":
 					if btn1:
@@ -82,7 +82,7 @@ def app():
 						st.write(df)
 						os.remove('descripter.csv')
 						st.session_state["value"] = "Aromatase"
-						st.download_button(label="Download data as CSV",data=res,file_name='predictions.csv',mime='text/csv')
+						st.download_button(label="Download data as CSV",data=df.to_csv(),file_name='predictions.csv',mime='text/csv')
 
 			elif choose == "Lungs Cancer":
 					if btn1:
@@ -97,7 +97,7 @@ def app():
 						st.write(df)
 						os.remove('descripter.csv')
 						st.session_state["value"] = "Lungs Cancer"
-						st.download_button(label="Download data as CSV",data=res,file_name='predictions.csv',mime='text/csv')
+						st.download_button(label="Download data as CSV",data=df.to_csv(),file_name='predictions.csv',mime='text/csv')
 
 			elif choose == "Dengue":
 					if btn1:
@@ -112,7 +112,7 @@ def app():
 					st.write(df)
 					os.remove('descripter.csv')
 					st.session_state["value"] = "Dengue"
-					st.download_button(label="Download data as CSV",data=res,file_name='predictions.csv',mime='text/csv')
+					st.download_button(label="Download data as CSV",data=df.to_csv(),file_name='predictions.csv',mime='text/csv')
 
 			elif choose == "Alzheimer":
 					if btn1:
@@ -127,7 +127,7 @@ def app():
 						st.write(df)
 						os.remove('descripter.csv')
 						st.session_state["value"] = "Alzheimer"
-						st.download_button(label="Download data as CSV",data=res,file_name='predictions.csv',mime='text/csv')
+						st.download_button(label="Download data as CSV",data=df.to_csv(),file_name='predictions.csv',mime='text/csv')
 
 			elif choose == "Influenza A":
 					if btn1:
@@ -142,7 +142,7 @@ def app():
 						st.write(df)
 						os.remove('descripter.csv')
 						st.session_state["value"] = "Influenza A"
-						st.download_button(label="Download data as CSV",data=res,file_name='predictions.csv',mime='text/csv')
+						st.download_button(label="Download data as CSV",data=df.to_csv(),file_name='predictions.csv',mime='text/csv')
 
 			elif choose == "Influenza B":
 					if btn1:
@@ -157,7 +157,7 @@ def app():
 						st.write(df)
 						os.remove('descripter.csv')
 						st.session_state["value"] = "Influenza B"
-						st.download_button(label="Download data as CSV",data=res,file_name='predictions.csv',mime='text/csv')
+						st.download_button(label="Download data as CSV",data=df.to_csv(),file_name='predictions.csv',mime='text/csv')
 
 			elif choose == "Leukemia":
 					if btn1:
@@ -172,7 +172,7 @@ def app():
 						st.write(df)
 						os.remove('descripter.csv')
 						st.session_state["value"] = "Leukemia"
-						st.download_button(label="Download data as CSV",data=res,file_name='predictions.csv',mime='text/csv')
+						st.download_button(label="Download data as CSV",data=df.to_csv(),file_name='predictions.csv',mime='text/csv')
 
 			elif choose == "Hiv":
 				if btn1:
@@ -187,7 +187,7 @@ def app():
 					st.write(df)
 					os.remove('descripter.csv')
 					st.session_state["value"] = "Hiv"
-					st.download_button(label="Download data as CSV",data=res,file_name='predictions.csv',mime='text/csv')
+					st.download_button(label="Download data as CSV",data=df.to_csv(),file_name='predictions.csv',mime='text/csv')
 
 			elif choose == "Chronic Kidney Disease":
 				if btn1:
@@ -202,33 +202,7 @@ def app():
 					st.write(df)
 					os.remove('descripter.csv')
 					st.session_state["value"] = "Chronic Kidney Disease"
-					st.download_button(label="Download data as CSV",data=res,file_name='predictions.csv',mime='text/csv')
+					st.download_button(label="Download data as CSV",data=df.to_csv(),file_name='predictions.csv',mime='text/csv')
 
 
-		# image = Image.open('logo.png')
-		# st.image(image,use_column_width=True)
-		# file = st.file_uploader("Upload",type=["csv"])
-		# if file:
-		# 	X = pd.read_csv(file)
-		# 	X = X['canonical_smiles']
-		# 	st.write(X)
-		# 	X_np = np.asarray(X)
-		# 	a = []
-		# 	for i in X_np:
-		# 		a.append(i)
-		# 	btn1 = st.button('Create Descripter',key=1)
-		# 	if btn1:
-		# 		from_smiles(a,output_csv='descripter.csv',fingerprints=True,descriptors=False)
-		# 		input_x = pd.read_csv('descripter.csv')
-		# 		input_x = input_x.drop(columns=['Name'],axis=1)
-		# 		st.write(input_x)
-		# 		model = pickle.load(open('trained_model.pkl','rb'))
-		# 		global res
-		# 		res = model.predict(input_x)
-		# 		df = pd.concat([X,pd.DataFrame(res)],axis=1)
-		# 		#df = df.iloc[1:,:]
-		# 		st.markdown("""### Predicted IC50 VALUES""")
-		# 		st.write(df)
-		# 		#st.write(type(res))
-		# 		os.remove('descripter.csv')
-
+		
