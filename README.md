@@ -1,7 +1,7 @@
 
 # ML_Drug_Discovery
 
-SARS CORONAVIRUS drug discovery using Machine Learning🏥
+drug discovery using Machine Learning🏥
 
 ## Website Link
 https://ml-drug-sars.onrender.com/
