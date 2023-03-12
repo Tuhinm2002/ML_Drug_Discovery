@@ -24,6 +24,7 @@ def app():
 			btn1 = st.button('Create Descripter',key=1)
 			
 			global res
+			global bioactivity_threshold
 			if choose == "CoronaVirus":
 				if btn1:
 					from_smiles(a,output_csv='descripter.csv',fingerprints=True,descriptors=False)
@@ -32,7 +33,15 @@ def app():
 					st.write(input_x)
 					model = pickle.load(open('corona_model.pkl','rb'))
 					res = model.predict(input_x)
-					df = pd.concat([X,pd.DataFrame(res)],axis=1)
+					bioactivity_threshold = []
+					for i in res:
+						if float(i) >= np.log10(10000):
+							bioactivity_threshold.append("inactive")
+						elif float(i) <= np.log10(1000):
+							bioactivity_threshold.append("active")
+						else:
+							bioactivity_threshold.append("intermediate")
+					df = pd.concat([X,pd.DataFrame(res),pd.DataFrame({"class":bioactivity_threshold})],axis=1)
 					st.markdown("""### Predicted IC50 VALUES""")
 					st.write(df)
 					os.remove('descripter.csv')
@@ -47,7 +56,15 @@ def app():
 					st.write(input_x)
 					model = pickle.load(open('hepatitisC_model.pkl','rb'))
 					res = model.predict(input_x)
-					df = pd.concat([X,pd.DataFrame(res)],axis=1)
+					bioactivity_threshold = []
+					for i in res:
+						if float(i) >= np.log10(10000):
+							bioactivity_threshold.append("inactive")
+						elif float(i) <= np.log10(1000):
+							bioactivity_threshold.append("active")
+						else:
+							bioactivity_threshold.append("intermediate")
+					df = pd.concat([X,pd.DataFrame(res),pd.DataFrame({"class":bioactivity_threshold})],axis=1)
 					st.markdown("""### Predicted IC50 VALUES""")
 					st.write(df)
 					os.remove('descripter.csv')
@@ -60,9 +77,17 @@ def app():
 						input_x = pd.read_csv('descripter.csv')
 						input_x = input_x.drop(columns=['Name'],axis=1)
 						st.write(input_x)
+						bioactivity_threshold = []
 						model = pickle.load(open('hepatitisB_model.pkl','rb'))
 						res = model.predict(input_x)
-						df = pd.concat([X,pd.DataFrame(res)],axis=1)
+						for i in res:
+							if float(i) >= np.log10(10000):
+								bioactivity_threshold.append("inactive")
+							elif float(i) <= np.log10(1000):
+								bioactivity_threshold.append("active")
+							else:
+								bioactivity_threshold.append("intermediate")
+						df = pd.concat([X,pd.DataFrame(res),pd.DataFrame({"class":bioactivity_threshold})],axis=1)
 						st.markdown("""### Predicted IC50 VALUES""")
 						st.write(df)
 						os.remove('descripter.csv')
@@ -75,9 +100,17 @@ def app():
 						input_x = pd.read_csv('descripter.csv')
 						input_x = input_x.drop(columns=['Name'],axis=1)
 						st.write(input_x)
+						bioactivity_threshold = []
 						model = pickle.load(open('aromatase_model.pkl','rb'))
 						res = model.predict(input_x)
-						df = pd.concat([X,pd.DataFrame(res)],axis=1)
+						for i in res:
+							if float(i) >= np.log10(10000):
+								bioactivity_threshold.append("inactive")
+							elif float(i) <= np.log10(1000):
+								bioactivity_threshold.append("active")
+							else:
+								bioactivity_threshold.append("intermediate")
+						df = pd.concat([X,pd.DataFrame(res),pd.DataFrame({"class":bioactivity_threshold})],axis=1)
 						st.markdown("""### Predicted IC50 VALUES""")
 						st.write(df)
 						os.remove('descripter.csv')
@@ -92,7 +125,15 @@ def app():
 						st.write(input_x)
 						model = pickle.load(open('lungs_model.pkl','rb'))
 						res = model.predict(input_x)
-						df = pd.concat([X,pd.DataFrame(res)],axis=1)
+						bioactivity_threshold = []
+						for i in res:
+							if float(i) >= np.log10(10000):
+								bioactivity_threshold.append("inactive")
+							elif float(i) <= np.log10(1000):
+								bioactivity_threshold.append("active")
+							else:
+								bioactivity_threshold.append("intermediate")
+						df = pd.concat([X,pd.DataFrame(res),pd.DataFrame({"class":bioactivity_threshold})],axis=1)
 						st.markdown("""### Predicted IC50 VALUES""")
 						st.write(df)
 						os.remove('descripter.csv')
@@ -107,7 +148,15 @@ def app():
 					st.write(input_x)
 					model = pickle.load(open('dengue_model.pkl','rb'))
 					res = model.predict(input_x)
-					df = pd.concat([X,pd.DataFrame(res)],axis=1)
+					bioactivity_threshold = []
+					for i in res:
+						if float(i) >= np.log10(10000):
+							bioactivity_threshold.append("inactive")
+						elif float(i) <= np.log10(1000):
+							bioactivity_threshold.append("active")
+						else:
+							bioactivity_threshold.append("intermediate")
+					df = pd.concat([X,pd.DataFrame(res),pd.DataFrame({"class":bioactivity_threshold})],axis=1)
 					st.markdown("""### Predicted IC50 VALUES""")
 					st.write(df)
 					os.remove('descripter.csv')
@@ -122,7 +171,15 @@ def app():
 						st.write(input_x)
 						model = pickle.load(open('alzheimer_model.pkl','rb'))
 						res = model.predict(input_x)
-						df = pd.concat([X,pd.DataFrame(res)],axis=1)
+						bioactivity_threshold = []
+						for i in res:
+							if float(i) >= np.log10(10000):
+								bioactivity_threshold.append("inactive")
+							elif float(i) <= np.log10(1000):
+								bioactivity_threshold.append("active")
+							else:
+								bioactivity_threshold.append("intermediate")
+						df = pd.concat([X,pd.DataFrame(res),pd.DataFrame({"class":bioactivity_threshold})],axis=1)
 						st.markdown("""### Predicted IC50 VALUES""")
 						st.write(df)
 						os.remove('descripter.csv')
@@ -137,7 +194,15 @@ def app():
 						st.write(input_x)
 						model = pickle.load(open('influenzaA_model.pkl','rb'))
 						res = model.predict(input_x)
-						df = pd.concat([X,pd.DataFrame(res)],axis=1)
+						bioactivity_threshold = []
+						for i in res:
+							if float(i) >= np.log10(10000):
+								bioactivity_threshold.append("inactive")
+							elif float(i) <= np.log10(1000):
+								bioactivity_threshold.append("active")
+							else:
+								bioactivity_threshold.append("intermediate")
+						df = pd.concat([X,pd.DataFrame(res),pd.DataFrame({"class":bioactivity_threshold})],axis=1)
 						st.markdown("""### Predicted IC50 VALUES""")
 						st.write(df)
 						os.remove('descripter.csv')
@@ -152,7 +217,15 @@ def app():
 						st.write(input_x)
 						model = pickle.load(open('influenzaB_model.pkl','rb'))
 						res = model.predict(input_x)
-						df = pd.concat([X,pd.DataFrame(res)],axis=1)
+						bioactivity_threshold = []
+						for i in res:
+							if float(i) >= np.log10(10000):
+								bioactivity_threshold.append("inactive")
+							elif float(i) <= np.log10(1000):
+								bioactivity_threshold.append("active")
+							else:
+								bioactivity_threshold.append("intermediate")
+						df = pd.concat([X,pd.DataFrame(res),pd.DataFrame({"class":bioactivity_threshold})],axis=1)
 						st.markdown("""### Predicted IC50 VALUES""")
 						st.write(df)
 						os.remove('descripter.csv')
@@ -167,7 +240,15 @@ def app():
 						st.write(input_x)
 						model = pickle.load(open('leukemia_model.pkl','rb'))
 						res = model.predict(input_x)
-						df = pd.concat([X,pd.DataFrame(res)],axis=1)
+						bioactivity_threshold = []
+						for i in res:
+							if float(i) >= np.log10(10000):
+								bioactivity_threshold.append("inactive")
+							elif float(i) <= np.log10(1000):
+								bioactivity_threshold.append("active")
+							else:
+								bioactivity_threshold.append("intermediate")
+						df = pd.concat([X,pd.DataFrame(res),pd.DataFrame({"class":bioactivity_threshold})],axis=1)
 						st.markdown("""### Predicted IC50 VALUES""")
 						st.write(df)
 						os.remove('descripter.csv')
@@ -182,7 +263,15 @@ def app():
 					st.write(input_x)
 					model = pickle.load(open('hiv_model.pkl','rb'))
 					res = model.predict(input_x)
-					df = pd.concat([X,pd.DataFrame(res)],axis=1)
+					bioactivity_threshold = []
+					for i in res:
+						if float(i) >= np.log10(10000):
+							bioactivity_threshold.append("inactive")
+						elif float(i) <= np.log10(1000):
+							bioactivity_threshold.append("active")
+						else:
+							bioactivity_threshold.append("intermediate")
+					df = pd.concat([X,pd.DataFrame(res),pd.DataFrame({"class":bioactivity_threshold})],axis=1)
 					st.markdown("""### Predicted IC50 VALUES""")
 					st.write(df)
 					os.remove('descripter.csv')
@@ -197,7 +286,15 @@ def app():
 					st.write(input_x)
 					model = pickle.load(open('corona_model.pkl','rb'))
 					res = model.predict(input_x)
-					df = pd.concat([X,pd.DataFrame(res)],axis=1)
+					bioactivity_threshold = []
+					for i in res:
+						if float(i) >= np.log10(10000):
+							bioactivity_threshold.append("inactive")
+						elif float(i) <= np.log10(1000):
+							bioactivity_threshold.append("active")
+						else:
+							bioactivity_threshold.append("intermediate")
+					df = pd.concat([X,pd.DataFrame(res),pd.DataFrame({"class":bioactivity_threshold})],axis=1)
 					st.markdown("""### Predicted IC50 VALUES""")
 					st.write(df)
 					os.remove('descripter.csv')
